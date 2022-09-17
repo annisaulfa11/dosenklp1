@@ -15,4 +15,10 @@
     <string name="home">Beranda</string>
     <string name="calender">Jadwal</string>
     <string name="notification">Bimbingan</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nim">2011522015</string>
+    <string name="judulSkripsi">Pembangunan Sistem Informasi Monitoring Harga Barang Kebutuhan Pokok Berbasis Barang Web</string>
+    <string name="accept">Terima</string>
+    <string name="except">Tolak</string>
 </resources>
