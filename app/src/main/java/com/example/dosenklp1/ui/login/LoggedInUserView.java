@@ -1,4 +1,4 @@
-package com.example.dosenklp1.ui.login;
+package  com.example.dosenklp1.ui.login;
 
 /**
  * Class exposing authenticated user details to the UI.
