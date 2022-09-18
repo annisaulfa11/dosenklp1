@@ -76,7 +76,7 @@
         android:layout_gravity="start"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/button_shape"
         android:enabled="false"
         android:fontFamily="@font/interbold"

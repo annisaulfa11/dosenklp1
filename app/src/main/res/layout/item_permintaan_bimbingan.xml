@@ -19,7 +19,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="80dp"
@@ -56,8 +56,8 @@
 
             <TextView
                 android:id="@+id/judulSkripsi"
-                android:layout_width="244dp"
-                android:layout_height="wrap_content"
+                android:layout_width="241dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/interregular"
                 android:text="@string/judulSkripsi"

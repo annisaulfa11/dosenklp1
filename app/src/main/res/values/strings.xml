@@ -20,4 +20,10 @@
     <string name="judulSkripsi">Pembangunan Sistem Informasi Monitoring Harga Barang Kebutuhan Pokok Berbasis Barang Web</string>
     <string name="accept">Terima</string>
     <string name="except">Tolak</string>
+    <string name="sidang">Sidang</string>
+    <string name="seminar">Seminar</string>
+    <string name="logbook">Logbook</string>
+    <string name="pembatalan_ta">Pembatalan TA</string>
+    <string name="jadwal">Senin / 17-09-2022</string>
+    <string name="jurusan">Sistem Informasi</string>
 </resources>
