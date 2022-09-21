@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/judulPembatalan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/pembatalan_ta"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/popupPembatalan"
+        android:layout_width="869dp"
+        android:layout_height="694dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="1471dp"
+        android:scrollbarSize="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/judulPembatalan"
+        app:layout_constraintVertical_bias="0.04">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="694dp">
+
+            <TextView
+                android:id="@+id/txtTgl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/tanggal_mulai_ta"
+                android:textColor="#757575"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/txtNIM"
+                app:layout_constraintTop_toBottomOf="@+id/txtNIM" />
+
+            <TextView
+                android:id="@+id/txtNIM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/nimmhs"
+                android:textColor="#757575"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/txtNama"
+                app:layout_constraintTop_toBottomOf="@+id/txtNama" />
+
+            <TextView
+                android:id="@+id/txtNama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/nama"
+                android:textColor="#757575"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtDospem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/dosen_pembimbing"
+                android:textColor="#757575"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/txtTgl"
+                app:layout_constraintTop_toBottomOf="@+id/txtTgl" />
+
+            <TextView
+                android:id="@+id/txtNama1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/annisa_ulfa"
+                android:textColor="#757575"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.978"
+                app:layout_constraintStart_toEndOf="@+id/txtNama"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtNIM1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/_2011522015"
+                android:textColor="#757575"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/txtNama1"
+                app:layout_constraintTop_toBottomOf="@+id/txtNama1" />
+
+            <TextView
+                android:id="@+id/txtTgl1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/_10_agustus_2020"
+                android:textColor="#757575"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/txtNIM1"
+                app:layout_constraintTop_toBottomOf="@+id/txtNIM1" />
+
+            <TextView
+                android:id="@+id/txtDospem1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/husnil_kamil_mt"
+                android:textColor="#757575"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/txtTgl1"
+                app:layout_constraintTop_toBottomOf="@+id/txtTgl1" />
+
+            <TextView
+                android:id="@+id/txtJudul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="Judul TA:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/txtDospem"
+                app:layout_constraintTop_toBottomOf="@+id/txtDospem" />
+
+            <TextView
+                android:id="@+id/txtJudul1"
+                android:layout_width="727dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="PEMBANGUNAN SISTEM INFORMASI MONITORING HARGA BARANG kEBUTUHAN POKOK BERBASIS WEB PADA DINAS PERDAGANGAN KOTA PADANG"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/txtJudul"
+                app:layout_constraintTop_toBottomOf="@+id/txtJudul" />
+
+            <TextView
+                android:id="@+id/txtAlasan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="Alasan:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/txtJudul1"
+                app:layout_constraintTop_toBottomOf="@+id/txtJudul1" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                android:layout_width="826dp"
+                android:layout_height="134dp"
+                app:layout_constraintStart_toStartOf="@+id/txtAlasan"
+                app:layout_constraintTop_toBottomOf="@+id/txtAlasan">
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/alasanPembatalan"
+                android:layout_width="835dp"
+                android:layout_height="143dp"
+                android:layout_marginTop="16dp"
+                android:hint="Masukkan Alasan"
+                app:layout_constraintStart_toStartOf="@+id/txtAlasan"
+                app:layout_constraintTop_toBottomOf="@+id/txtAlasan" />
+
+            <Button
+                android:id="@+id/bttnAjukan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="332dp"
+                android:layout_marginTop="52dp"
+                android:background="@drawable/button_shape"
+                android:text="Ajukan Pembatalan"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+            <Button
+                android:id="@+id/bttnBatal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_shape"
+                android:text="Batal"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/bttnAjukan"
+                app:layout_constraintTop_toBottomOf="@+id/bttnAjukan" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
