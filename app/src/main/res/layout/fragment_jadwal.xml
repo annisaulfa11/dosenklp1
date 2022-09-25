@@ -12,9 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="jadwal fragment"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="298dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="420dp" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier2"

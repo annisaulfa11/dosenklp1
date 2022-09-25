@@ -3,6 +3,7 @@
     <color name="primaryColor">#27AE60</color>
     <color name="darkGray">#C9C9C9</color>
     <color name="white">#ffffff</color>
+    <color name="light">#F7F7F7</color>
     <color name="black">#000000</color>
     <color name="lightGray">#E3E5E5</color>
     <color name="brightGreen">#5CEE38</color>

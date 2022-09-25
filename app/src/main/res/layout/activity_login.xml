@@ -8,6 +8,7 @@
     tools:context=".LoginActivity">
 
 
+
     <ImageView
         android:id="@+id/logounand"
         android:layout_width="wrap_content"
@@ -42,7 +43,6 @@
         android:layout_marginEnd="20dp"
         android:background="@drawable/form_shape"
         android:hint="Masukkan email"
-        android:inputType="textEmailAddress"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,17 +74,16 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/button_shape"
-        android:enabled="false"
-        android:onClick="pindah"
         android:fontFamily="@font/interbold"
         android:text="Login"
+        android:onClick="login"
         android:textColor="@color/white"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/email"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/email"
-        tools:ignore="UsingOnClickInXml" />
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"

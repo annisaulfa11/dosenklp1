@@ -3,16 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        app:cardElevation="0dp"
-        tools:layout_editor_absoluteX="10dp">
+        tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -22,17 +24,21 @@
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:fontFamily="@font/inter"
                 android:text="@string/student_name"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                tools:layout_editor_absoluteX="78dp"
-                tools:layout_editor_absoluteY="0dp" />
+                app:layout_constraintStart_toEndOf="@+id/profilpicture"
+                app:layout_constraintTop_toTopOf="@+id/profilpicture" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profilpicture"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:src="@drawable/ic_launcher_background"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
