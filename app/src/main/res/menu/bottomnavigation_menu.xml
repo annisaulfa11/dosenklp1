@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/beranda" />
+
+    <item
+        android:id="@+id/jadwal"
+        android:icon="@drawable/ic_baseline_calendar_today_24"
+        android:title="@string/jadwal" />
+
+    <item
+        android:id="@+id/bimbingan"
+        android:icon="@drawable/ic_baseline_notifications_none_24"
+        android:title="@string/bimbingan" />
+
+</menu>

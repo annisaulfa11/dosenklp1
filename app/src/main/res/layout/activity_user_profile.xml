@@ -15,14 +15,15 @@
         android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_arrow_back" />
+        app:srcCompat="@drawable/ic_baseline_arrow_back"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/textViewUserProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Profil Saya"
+        android:text="@string/profil_saya"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +38,8 @@
         android:src="@drawable/profileIcon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewUserProfile" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewUserProfile"
+        tools:ignore="ImageContrastCheck" />
 
     <Button
         android:id="@+id/buttonEditProfil"
@@ -46,10 +48,11 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="#17911C"
         android:inputType="textCapWords"
-        android:text="Ubah Profil"
+        android:text="@string/ubah_profil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/circleImageViewProfilPict" />
+        app:layout_constraintTop_toBottomOf="@+id/circleImageViewProfilPict"
+        tools:ignore="TextViewEdits,TextContrastCheck" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewNama"
@@ -67,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginTop="24dp"
-        android:text="Username"
+        android:text="@string/username"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardViewNama" />
@@ -78,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="18dp"
-        android:text="Husnil Kamil"
+        android:text="@string/husnil_kamil"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardViewNama" />
@@ -98,7 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Nama"
+        android:text="@string/nama"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/textViewUsername"
         app:layout_constraintTop_toBottomOf="@+id/cardViewUsername3" />
@@ -108,7 +111,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Husnil Kamil"
+        android:text="@string/husnil_kamil"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/textViewUsername2"
         app:layout_constraintTop_toBottomOf="@+id/cardViewUsername3" />
@@ -118,7 +121,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="NIP"
+        android:text="@string/nip"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/textViewNama"
         app:layout_constraintTop_toBottomOf="@+id/textViewNama" />
@@ -128,7 +131,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="198201182008121002"
+        android:text="@string/_198201182008121002"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/textViewNama2"
         app:layout_constraintTop_toBottomOf="@+id/textViewNama2" />
@@ -138,7 +141,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="No. HP"
+        android:text="@string/no_hp"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/textViewNIP"
         app:layout_constraintTop_toBottomOf="@+id/textViewNIP" />
@@ -148,7 +151,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="+628XXXXXXXXXX"
+        android:text="@string/_628xxxxxxxxxx"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/textViewNIP2"
         app:layout_constraintTop_toBottomOf="@+id/textViewNIP2" />
@@ -167,7 +170,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="ACCOUNT INFORMATION"
+        android:text="@string/account_information"
+        android:textColor="#616161"
         app:layout_constraintStart_toStartOf="@+id/textViewNoHP"
         app:layout_constraintTop_toTopOf="@+id/tableRowInformation" />
 
@@ -176,7 +180,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Email"
+        android:text="@string/email"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/textViewInformation"
         app:layout_constraintTop_toBottomOf="@+id/tableRowInformation" />
@@ -186,7 +190,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="husnilkamil@gmail.com"
+        android:text="@string/husnilkamil_gmail_com"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/textViewNomorHP"
         app:layout_constraintTop_toBottomOf="@+id/tableRowInformation" />
@@ -206,7 +210,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Password"
+        android:text="@string/password"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/textViewEmail"
         app:layout_constraintTop_toBottomOf="@+id/cardViewEmail" />
@@ -216,7 +220,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="*******"
+        android:text="@string/pswd"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/textViewEmail2"
         app:layout_constraintTop_toBottomOf="@+id/cardViewEmail" />
@@ -228,13 +232,14 @@
         android:layout_marginTop="68dp"
         android:backgroundTint="#17911C"
         android:inputType="textCapWords"
-        android:text="Ubah Password"
+        android:text="@string/ubah_password"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardViewEmail"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TextViewEdits,TextContrastCheck" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewBtn"
