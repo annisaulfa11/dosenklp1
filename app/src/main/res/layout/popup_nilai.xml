@@ -61,7 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt"
+        app:layout_constraintTop_toBottomOf="@+id/judulPembatalan"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -97,7 +97,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/txt"
+        android:id="@+id/judulPembatalan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
