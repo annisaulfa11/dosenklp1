@@ -9,6 +9,7 @@
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
         android:theme="@style/Theme.Dosenklp1.NoActionBar"
         tools:targetApi="30">
 
@@ -19,21 +20,14 @@
             android:name=".MahasiswaActivity"
             android:exported="false" />
         <activity
-            android:name=".jadwalActivity"
+            android:name=".UserProfileActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".userProfileActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ubahPasswordActivity"
+            android:name=".UbahPasswordActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -42,6 +36,7 @@
         <activity
             android:name=".UbahProfilActivity"
             android:exported="false">
+        </activity>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

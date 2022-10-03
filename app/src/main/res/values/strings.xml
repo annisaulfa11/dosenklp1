@@ -26,7 +26,6 @@
     <string name="jadwal">Senin / 17-09-2022</string>
     <string name="jurusan">Sistem Informasi</string>
     <string name="tanggal_mulai_ta">Tanggal Mulai TA:</string>
-    <string name="nama">Nama:</string>
     <string name="dosen_pembimbing">Dosen Pembimbing:</string>
     <string name="annisa_ulfa">Annisa Ulfa</string>
     <string name="_2011522015">2011522015</string>
@@ -35,26 +34,21 @@
     <string name="nimmhs">NIM:</string>
     <string name="jadwal_seminar_dan_sidang">Jadwal Seminar dan Sidang</string>
     <string name="nama_mahasiswa">Nama Mahasiswa</string>
-    <string name="nim">NIM</string>
-    <string name="seminar">Seminar</string>
     <string name="hari_tanggal">Hari / Tanggal</string>
     <string name="tempat">Tempat</string>
     <string name="waktu">Waktu</string>
-    <string name="sidang">Sidang</string>
     <string name="senin_17_12_2022">Senin / 17-12-2022</string>
     <string name="ruang_seminar_jsi">Ruang Seminar JSI</string>
     <string name="_10_00_wib">10.00 WIB</string>
     <string name="kamis_20_12_2022">Kamis / 20-12-2022</string>
     <string name="ranti_agustin">Ranti Agustin</string>
     <string name="_1911522028">1911522028</string>
-    <string name="home">Home</string>
-    <string name="jadwal">Jadwal</string>
     <string name="bimbingan">Bimbingan</string>
     <string name="beranda">Beranda</string>
     <string name="profil_saya">Profil Saya</string>
     <string name="todo">TODO</string>
     <string name="husnil_kamil">Husnil Kamil</string>
-    <string name="nip">NIP</string>
+
     <string name="_198201182008121002">198201182008121002</string>
     <string name="nama">Nama</string>
     <string name="ubah_profil">Ubah Profil</string>
@@ -63,7 +57,7 @@
     <string name="no_hp">No. HP</string>
     <string name="account_information">ACCOUNT INFORMATION</string>
     <string name="email">Email</string>
-    <string name="husnilkamil_gmail_com">husnilkamil@gmail.com</string>
+    <string name="email_fill">husnilkamil@gmail.com</string>
     <string name="password">Password</string>
     <string name="pswd">*******</string>
     <string name="ubah_password">Ubah Password</string>
@@ -73,4 +67,5 @@
     <string name="simpan">Simpan</string>
     <string name="batalkan">Batalkan</string>
     <string name="tambah_foto">Tambah Foto</string>
+    <string name="pembatalan_ta">Batal</string>
 </resources>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/light_rounded">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewItemJadwal"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/itemJadwal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageViewProfilePicture"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textViewNamaMahasiswa"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/textViewNamaMahasiswa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/interbold"
+                android:text="@string/ranti_agustin"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/circleImageViewProfilePicture"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewNIM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/interbold"
+                android:text="@string/_1911522028"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textViewNamaMahasiswa"
+                app:layout_constraintTop_toBottomOf="@+id/textViewNamaMahasiswa" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/jadwalSeminar"
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:layout_margin="20dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="#DFDEDE"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/circleImageViewProfilePicture"
+                tools:layout_editor_absoluteX="1dp">
+
+                <TextView
+                    android:id="@+id/tanggalSeminar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/interbold"
+                    android:text="@string/hari_tanggal"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tempatSeminar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="39dp"
+                    android:fontFamily="@font/interbold"
+                    android:text="@string/tempat"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/waktuSeminar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="60dp"
+                    android:fontFamily="@font/interbold"
+                    android:text="@string/waktu"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/hariSeminar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="118dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/senin_17_12_2022"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/ruangSeminar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="118dp"
+                    android:layout_marginTop="39dp"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/ruang_seminar_jsi"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/timeSeminar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="118dp"
+                    android:layout_marginTop="60dp"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/_10_00_wib"
+                    android:textColor="@color/black" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/seminar"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/jadwalSeminar"
+                app:layout_constraintTop_toTopOf="@+id/jadwalSeminar">
+
+                <TextView
+                    android:id="@+id/textViewSeminar"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/seminar"
+                    android:textAlignment="center"
+                    android:textColor="#17911C"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/jadwalSidang"
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:layout_margin="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="#DFDEDE"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/jadwalSeminar">
+
+                <TextView
+                    android:id="@+id/tanggalSidang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/interbold"
+                    android:text="@string/hari_tanggal"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tempatSidang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="39dp"
+                    android:fontFamily="@font/interbold"
+                    android:text="@string/tempat"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/waktuSidang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="60dp"
+                    android:fontFamily="@font/interbold"
+                    android:text="@string/waktu"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/hariSidang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="118dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/kamis_20_12_2022"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/ruangSidang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="118dp"
+                    android:layout_marginTop="39dp"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/ruang_seminar_jsi"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/timeSidang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="118dp"
+                    android:layout_marginTop="60dp"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/_10_00_wib"
+                    android:textColor="@color/black" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/sidang"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="@id/jadwalSidang"
+                app:layout_constraintTop_toTopOf="@id/jadwalSidang">
+
+                <TextView
+                    android:id="@+id/textViewSidang"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sidang"
+                    android:textAlignment="center"
+                    android:textColor="#17911C"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

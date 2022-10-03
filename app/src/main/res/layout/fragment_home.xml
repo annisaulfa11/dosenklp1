@@ -42,6 +42,7 @@
                     android:id="@+id/profilpicture"
                     android:layout_width="85dp"
                     android:layout_height="85dp"
+
                     android:src="@drawable/ic_launcher_background"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"

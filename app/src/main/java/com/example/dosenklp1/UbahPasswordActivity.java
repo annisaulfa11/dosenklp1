@@ -7,20 +7,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class UbahProfilActivity extends AppCompatActivity {
+public class UbahPasswordActivity extends AppCompatActivity {
+    public ImageView imageView;
 
-    public ImageView imageView ;
-    private Object ImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ubah_profil);
+        setContentView(R.layout.activity_ubah_password);
+
 
     }
 
     public void toUserProfile(View view) {
-        startActivity (new Intent(UbahProfilActivity.this, UserProfileActivity.class));
+        Intent click = new Intent(this, UserProfileActivity.class);
+        startActivity(click);
 
     }
 }
