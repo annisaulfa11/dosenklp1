@@ -3,6 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/activity_detail_logbook.xml" value="0.22" />
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/activity_detail_seminar.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/activity_detail_sidang.xml" value="0.12" />
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/activity_home.xml" value="0.12273550724637682" />
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/activity_list_logbook.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/activity_login.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/activity_pembatalan_taactivity.xml" value="0.14990942028985507" />
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/fragment_bimbingan.xml" value="0.1" />
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/fragment_home.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/fragment_jadwal.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/fragment_logbook.xml" value="0.1" />
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/fragment_pembatalan.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/fragment_seminar.xml" value="0.1" />
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/fragment_sidang.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/item_mahasiswa.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/item_permintaan_bimbingan.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/pembatalanta_popup.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/popup_nilai.xml" value="0.22" />
+        <entry key="..\:/Users/user/StudioProjects/dosenklp1/app/src/main/res/layout/popup_pembatalan.xml" value="0.16666666666666666" />
         <entry key="..\:/dosen/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1925" />
         <entry key="..\:/dosen/app/src/main/res/drawable/button_negative_disabled.xml" value="0.1" />
         <entry key="..\:/dosen/app/src/main/res/drawable/button_positive_disabled.xml" value="0.1" />
