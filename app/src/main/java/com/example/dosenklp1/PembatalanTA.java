@@ -6,16 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class DetailSeminarActivity extends AppCompatActivity {
+public class PembatalanTA extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_seminar);
+        setContentView(R.layout.activity_pembatalan);
     }
 
-    public void main(View view) {
-        Intent main = new Intent(this, ProfileTaActivity.class);
-        startActivity(main);
+    public void batal(View view) {
+        Intent batal = new Intent(this, ProfileTaActivity.class);
+        startActivity(batal);
     }
 }

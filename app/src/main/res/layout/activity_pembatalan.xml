@@ -4,54 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MahasiswaActivity">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:onClick="main"
-        android:layout_marginStart="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/menu"
-        app:srcCompat="@drawable/ic_baseline_navigate_before_24"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:fontFamily="@font/inter"
-        android:text="Profil Mahasiswa"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.465"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profilpicture"
-        android:layout_width="85dp"
-        android:layout_height="85dp"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/ic_launcher_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menu"
-        tools:ignore="MissingConstraints" />
+    tools:context=".PembatalanTA">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardNama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@+id/profilpicture"
-        tools:ignore="MissingConstraints"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/lightGray"
         app:cardElevation="0dp"
-        android:backgroundTint="@color/lightGray">
+        app:layout_constraintTop_toBottomOf="@+id/judulPembatalan2"
+        tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -90,10 +53,9 @@
         android:id="@+id/cardNim"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/cardNama"
-        tools:ignore="MissingConstraints"
         app:cardElevation="0dp"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/cardNama"
+        tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -133,10 +95,10 @@
         android:id="@+id/cardTglTA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/cardNim"
-        tools:ignore="MissingConstraints"
+        android:backgroundTint="@color/lightGray"
         app:cardElevation="0dp"
-        android:backgroundTint="@color/lightGray">
+        app:layout_constraintTop_toBottomOf="@+id/cardNim"
+        tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -144,12 +106,12 @@
             tools:ignore="MissingConstraints">
 
             <TextView
-                android:id="@+id/jurusan"
+                android:id="@+id/tanggsl_ta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:fontFamily="@font/inter"
-                android:text="Jurusan"
+                android:text="Tgl Memulai TA"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -157,12 +119,12 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/jurusan_fill"
+                android:id="@+id/tanggal_ta_fill"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
                 android:fontFamily="@font/inter"
-                android:text="@string/jurusan"
+                android:text="10 Agustus 2022"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -176,9 +138,9 @@
         android:id="@+id/cardDospem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardElevation="0dp"
         app:layout_constraintTop_toBottomOf="@+id/cardTglTA"
-        tools:ignore="MissingConstraints"
-        app:cardElevation="0dp">
+        tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -186,12 +148,12 @@
             tools:ignore="MissingConstraints">
 
             <TextView
-                android:id="@+id/tahun"
+                android:id="@+id/dospem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:fontFamily="@font/inter"
-                android:text="Tahun Masuk"
+                android:text="Dosen Pembimbing"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -199,12 +161,12 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tahun_fill"
+                android:id="@+id/dospem_fill"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
                 android:fontFamily="@font/inter"
-                android:text="2022"
+                android:text="@string/lecturer_name"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -218,43 +180,128 @@
         android:id="@+id/cardJudul"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/cardDospem"
-        tools:ignore="MissingConstraints"
+        android:backgroundTint="@color/lightGray"
         app:cardElevation="0dp"
-        android:backgroundTint="@color/lightGray">
+        app:layout_constraintTop_toBottomOf="@+id/cardDospem"
+        tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             tools:ignore="MissingConstraints">
 
             <TextView
-                android:id="@+id/jalur"
+                android:id="@+id/txtJudul1"
+                android:layout_width="364dp"
+                android:layout_height="67dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/inter"
+                android:text="@string/judulSkripsi"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/txtJudul"
+                app:layout_constraintTop_toBottomOf="@+id/txtJudul" />
+
+            <TextView
+                android:id="@+id/txtJudul"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="15dp"
                 android:fontFamily="@font/inter"
-                android:text="Jalur"
+                android:text="Judul TA"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/jalur_fill"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:fontFamily="@font/inter"
-                android:text="SBMPTN"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/judulPembatalan2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/interbold"
+        android:text="Pembatalan TA"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/submit5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/button_shape"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/interbold"
+        android:onClick="batal"
+        android:text="Batalkan"
+        android:textColor="@color/primaryColor"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txtAlasan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/inter"
+        android:text="Alasan"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardJudul" />
+
+    <EditText
+        android:id="@+id/input4"
+        android:layout_width="369dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/form_shape"
+        android:hint="Alasan"
+        android:inputType="textEmailAddress"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAlasan"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/submit4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_shape"
+        android:fontFamily="@font/interbold"
+        android:onClick="batal"
+        android:text="Ajukan Pembatalan"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/submit5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,8 +5,6 @@
 
     <application
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -17,9 +15,18 @@
 
         <activity
             android:name=".ProfileTaActivity"
-            android:exported="false" />
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".MahasiswaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InputTA"
             android:exported="false" />
         <activity
             android:name=".UserProfileActivity"
@@ -39,14 +46,9 @@
             android:name=".UbahProfilActivity"
             android:exported="false">
         </activity>
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
             android:name=".MahasiswaActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
-            android:exported="true">
             android:name=".DetailLogbookActivity"
             android:exported="false" />
         <activity
@@ -59,19 +61,13 @@
             android:name=".DetailSeminarActivity"
             android:exported="false" />
         <activity
-            android:name=".PopupPembatalanTA"
+            android:name=".PembatalanTA"
             android:exported="false" />
-        <activity
-            android:name=".MahasiswaActivity"
-            android:exported="false" />
+
         <activity
             android:name=".LoginActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

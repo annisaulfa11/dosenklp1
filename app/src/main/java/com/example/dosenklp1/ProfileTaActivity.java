@@ -30,4 +30,24 @@ public class ProfileTaActivity extends AppCompatActivity {
         startActivity(photoIntent);
 
     }
+
+    public void pembatalan(View view) {
+        Intent batal = new Intent(this, PembatalanTA.class);
+        startActivity(batal);
+    }
+
+    public void nilai(View view) {
+        Intent nilai = new Intent(this, InputTA.class);
+        startActivity(nilai);
+    }
+
+    public void main(View view) {
+        Intent main = new Intent(this, MainActivity.class);
+        startActivity(main);
+    }
+
+    public void logbook(View view) {
+        Intent logbook = new Intent(this, ListLogbookActivity.class);
+        startActivity(logbook);
+    }
 }

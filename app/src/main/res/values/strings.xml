@@ -25,13 +25,13 @@
     <string name="logbook">Logbook</string>
     <string name="jadwal">Senin / 17-09-2022</string>
     <string name="jurusan">Sistem Informasi</string>
-    <string name="tanggal_mulai_ta">Tanggal Mulai TA:</string>
-    <string name="dosen_pembimbing">Dosen Pembimbing:</string>
+    <string name="tanggal_mulai_ta">Tanggal Mulai TA</string>
+    <string name="dosen_pembimbing">Dosen Pembimbing</string>
     <string name="annisa_ulfa">Annisa Ulfa</string>
     <string name="_2011522015">2011522015</string>
     <string name="_10_agustus_2020">10 Agustus 2020</string>
     <string name="husnil_kamil_mt">Husnil Kamil, MT</string>
-    <string name="nimmhs">NIM:</string>
+    <string name="nimmhs">NIM</string>
     <string name="jadwal_seminar_dan_sidang">Jadwal Seminar dan Sidang</string>
     <string name="nama_mahasiswa">Nama Mahasiswa</string>
     <string name="hari_tanggal">Hari / Tanggal</string>
@@ -68,4 +68,7 @@
     <string name="batalkan">Batalkan</string>
     <string name="tambah_foto">Tambah Foto</string>
     <string name="pembatalan_ta">Batal</string>
+    <string name="bulan">September</string>
+    <string name="tanggal_logbook">10/9/2022</string>
+    <string name="logbook_ket">Penyelesaian bab 1</string>
 </resources>
