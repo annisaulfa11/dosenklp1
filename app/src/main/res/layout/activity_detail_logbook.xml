@@ -4,32 +4,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailSeminarActivity">
+    android:background="@drawable/bg"
+    tools:context=".DetailLogbookActivity">
 
-    <ImageButton
-        android:id="@+id/imageView4"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="#00FFFFFF"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="344dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/submit2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/backbutton"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="-1dp"
+            tools:layout_editor_absoluteY="-343dp">
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/tanggal_logbook"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Catatan :"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView20"
+                app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:text="Penyelesaian bab 1 dan sudah selesai direvisi Penyelesaian bab 1 dan sudah selesai direvisiPenyelesaian bab 1 dan sudah selesai direvisiPenyelesaian bab 1 dan sudah selesai direvisiPenyelesaian bab 1 dan sudah selesai direvisi"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/inter"
         android:text="Detail Logbook"
-        android:textColor="#000000"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/back2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:onClick="main"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_navigate_before_24"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/submit"
@@ -39,8 +100,8 @@
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="12dp"
         android:background="@drawable/button_shape"
-        android:enabled="false"
         android:fontFamily="@font/interbold"
+        android:onClick="main"
         android:text="Setuju"
         android:textColor="@color/white"
         android:textSize="16dp"
@@ -55,11 +116,11 @@
         android:layout_gravity="start"
         android:layout_marginStart="60dp"
         android:layout_marginBottom="12dp"
-        android:background="@color/white"
+        android:background="@drawable/button_shape"
+        android:backgroundTint="@color/white"
         android:enabled="false"
         android:fontFamily="@font/interbold"
-        android:text="Edit
-"
+        android:text="Edit"
         android:textColor="@color/primaryColor"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
