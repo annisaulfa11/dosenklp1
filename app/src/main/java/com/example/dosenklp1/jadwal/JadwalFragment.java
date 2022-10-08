@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.dosenklp1.R;
-import com.example.dosenklp1.bimbingan.Data;
-import com.example.dosenklp1.bimbingan.ListAdapterJadwal;
+import com.example.dosenklp1.bimbingan.Bimbingan;
+import com.example.dosenklp1.jadwal.ListAdapterJadwal;
 
 
 public class JadwalFragment extends Fragment {

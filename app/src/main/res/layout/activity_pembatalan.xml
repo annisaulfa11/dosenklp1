@@ -28,7 +28,8 @@
                 android:fontFamily="@font/inter"
                 android:text="Nama"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="16sp
+"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -41,7 +42,8 @@
                 android:fontFamily="@font/inter"
                 android:text="@string/student_name"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="16sp
+"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -70,7 +72,8 @@
                 android:fontFamily="@font/inter"
                 android:text="NIM"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="16sp
+"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -83,7 +86,8 @@
                 android:fontFamily="@font/inter"
                 android:text="@string/nim"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="16sp
+"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -113,7 +117,8 @@
                 android:fontFamily="@font/inter"
                 android:text="Tgl Memulai TA"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="16sp
+"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -126,7 +131,8 @@
                 android:fontFamily="@font/inter"
                 android:text="10 Agustus 2022"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="16sp
+"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -155,7 +161,8 @@
                 android:fontFamily="@font/inter"
                 android:text="Dosen Pembimbing"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="16sp
+"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -168,7 +175,8 @@
                 android:fontFamily="@font/inter"
                 android:text="@string/lecturer_name"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="16sp
+"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -199,7 +207,8 @@
                 android:fontFamily="@font/inter"
                 android:text="@string/judulSkripsi"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="16sp
+"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/txtJudul"
                 app:layout_constraintTop_toBottomOf="@+id/txtJudul" />
@@ -213,7 +222,8 @@
                 android:fontFamily="@font/inter"
                 android:text="Judul TA"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="16sp
+"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -228,7 +238,7 @@
         android:fontFamily="@font/interbold"
         android:text="Pembatalan TA"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -263,7 +273,8 @@
         android:text="Alasan"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="16sp
+"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardJudul" />
 

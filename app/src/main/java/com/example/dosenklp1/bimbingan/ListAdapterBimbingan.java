@@ -1,23 +1,43 @@
 package com.example.dosenklp1.bimbingan;
 
+import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dosenklp1.R;
-import com.example.dosenklp1.home.Data;
+import com.example.dosenklp1.home.Mahasiswa;
+
+import java.util.ArrayList;
 
 
 public class ListAdapterBimbingan extends  RecyclerView.Adapter<ListAdapterBimbingan.MyViewHolder>{
 
-    String[] list;
+    ArrayList<Bimbingan> listPermintaan = new ArrayList<>();
+    ItemPermintaanClickListener permintaanClickListener;
 
-    public ListAdapterBimbingan(String[] list){
-        this.list = Data.names;
+    public ListAdapterBimbingan(ArrayList<Bimbingan> listPermintaan, ItemPermintaanClickListener permintaanClickListener) {
+        this.listPermintaan = listPermintaan;
+        this.permintaanClickListener = permintaanClickListener;
+    }
+
+    public ListAdapterBimbingan(ArrayList<Bimbingan> listPermintaan) {
+        this.listPermintaan = listPermintaan;
+    }
+
+    public void setListPermintaan(ArrayList<Bimbingan> listPermintaan) {
+        this.listPermintaan = listPermintaan;
+    }
+
+    public void setPermintaanClickListener(ItemPermintaanClickListener permintaanClickListener) {
+        this.permintaanClickListener = permintaanClickListener;
     }
 
     @NonNull
@@ -28,21 +48,70 @@ public class ListAdapterBimbingan extends  RecyclerView.Adapter<ListAdapterBimbi
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.textView.setText(Data.names[position]);
-     }
+        Bimbingan bimbingan = listPermintaan.get(position);
+        holder.profil.setImageResource(R.drawable.ic_launcher_background);
+        holder.textNama.setText(bimbingan.getNama());
+        holder.textNim.setText(bimbingan.getNim());
+        holder.textJudul.setText(bimbingan.getJudul());
+
+
+
+    }
 
     @Override
     public int getItemCount() {
-        return Data.names.length;
+        return listPermintaan.size();
+    }
+
+    public interface ItemPermintaanClickListener{
+        void onItemPermintaanClick(Bimbingan bimbingan);
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView textView;
+        TextView textNama, textNim, textJudul;
+        ImageView profil;
+        Button terima, tolak;
+        Boolean check = false;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            textView = itemView.findViewById(R.id.nama);
+            textNama = itemView.findViewById(R.id.nama);
+            textNim = itemView.findViewById(R.id.nim);
+            textJudul = itemView.findViewById(R.id.judulSkripsi);
+            profil = itemView.findViewById(R.id.profilMahasiswa);
+            terima = itemView.findViewById(R.id.buttonAccept);
+            tolak = itemView.findViewById(R.id.buttonDecline);
+
+            terima.setOnClickListener(new View.OnClickListener() {
+                @SuppressLint("ResourceAsColor")
+                @Override
+                public void onClick(View view) {
+                    Bimbingan bimbingan = listPermintaan.get(getBindingAdapterPosition());
+                    permintaanClickListener.onItemPermintaanClick(bimbingan);
+                    check = true;
+                    terima.setBackgroundColor(R.color.brightGreen);
+                    terima.setTextColor(R.color.white);
+
+
+                }
+            });
+
+            tolak.setOnClickListener(new View.OnClickListener() {
+                @SuppressLint("ResourceAsColor")
+                @Override
+                public void onClick(View view) {
+                    Bimbingan bimbingan = listPermintaan.get(getBindingAdapterPosition());
+                    permintaanClickListener.onItemPermintaanClick(bimbingan);
+                    check = true;
+                    tolak.setBackgroundColor(R.color.red);
+                    tolak.setTextColor(R.color.white);
+
+                }
+            });
+
+
+
         }
     }
 }

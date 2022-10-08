@@ -15,12 +15,8 @@
 
         <activity
             android:name=".ProfileTaActivity"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:exported="false" >
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
         </activity>
         <activity
             android:name=".MahasiswaActivity"
@@ -30,18 +26,13 @@
             android:exported="false" />
         <activity
             android:name=".UserProfileActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:exported="false"/>
+
+
         <activity
             android:name=".UbahPasswordActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:exported="false"/>
+
         <activity
             android:name=".UbahProfilActivity"
             android:exported="false">
@@ -63,10 +54,18 @@
         <activity
             android:name=".PembatalanTA"
             android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
 
         <activity
             android:name=".LoginActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
     </application>

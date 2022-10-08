@@ -13,7 +13,7 @@ import com.example.dosenklp1.logbook.Logbook;
 
 import java.util.ArrayList;
 
-public class ListLogbookActivity extends AppCompatActivity {
+public class ListLogbookActivity extends AppCompatActivity implements ListAdapterLogbook.ItemLogbookClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +21,8 @@ public class ListLogbookActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_logbook);
 
         RecyclerView recyclerView = findViewById(R.id.list_logbook);
-
         ListAdapterLogbook adapterLogbook = new ListAdapterLogbook(getLogbook());
+        adapterLogbook.setLogbookClickListener(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapterLogbook);
 
@@ -62,5 +62,11 @@ public class ListLogbookActivity extends AppCompatActivity {
     public void main(View view) {
         Intent main = new Intent(this, ProfileTaActivity.class);
         startActivity(main);
+    }
+
+    @Override
+    public void onItemLogbookClick(Logbook logbook) {
+        Intent detailLogbook = new Intent(this, DetailLogbookActivity.class);
+        startActivity(detailLogbook);
     }
 }

@@ -12,6 +12,8 @@ import com.example.dosenklp1.home.HomeFragment;
 public class ProfileTaActivity extends AppCompatActivity {
 
     public static final String ITEM_EXTRA = "item_extra";
+    String nama;
+    TextView textNama;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,14 @@ public class ProfileTaActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.name);
 
         HomeFragment homeFragment = getIntent().getParcelableExtra(ITEM_EXTRA);
+
+        Intent detailTa = getIntent();
+        if(detailTa != null){
+            nama = detailTa.getStringExtra("nama");
+            textNama = findViewById(R.id.name);
+            textNama.setText(nama);
+        }
+
 
     }
 
@@ -49,5 +59,15 @@ public class ProfileTaActivity extends AppCompatActivity {
     public void logbook(View view) {
         Intent logbook = new Intent(this, ListLogbookActivity.class);
         startActivity(logbook);
+    }
+
+    public void sidang(View view) {
+        Intent sidang = new Intent(this, DetailSidangActivity.class);
+        startActivity(sidang);
+    }
+
+    public void seminar(View view) {
+        Intent seminar = new Intent(this, DetailSeminarActivity.class);
+        startActivity(seminar);
     }
 }
