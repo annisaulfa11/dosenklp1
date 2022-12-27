@@ -8,8 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.dosenklp1.logbook.ListAdapterLogbook;
-import com.example.dosenklp1.logbook.Logbook;
+import com.example.dosenklp1.adapter.ListAdapterLogbook;
+import com.example.dosenklp1.models.Logbook;
 
 import java.util.ArrayList;
 

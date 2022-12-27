@@ -1,4 +1,4 @@
-package com.example.dosenklp1.jadwal;
+package com.example.dosenklp1.fragments;
 
 import android.os.Bundle;
 
@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.dosenklp1.R;
-import com.example.dosenklp1.bimbingan.Bimbingan;
-import com.example.dosenklp1.jadwal.ListAdapterJadwal;
+import com.example.dosenklp1.adapter.ListAdapterJadwal;
+import com.example.dosenklp1.models.Data;
 
 
 public class JadwalFragment extends Fragment {

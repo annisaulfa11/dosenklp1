@@ -1,7 +1,9 @@
 
-package com.example.dosenklp1.home;
+package com.example.dosenklp1.fragments;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -16,18 +18,26 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.dosenklp1.Config;
 import com.example.dosenklp1.ProfileTaActivity;
 import com.example.dosenklp1.R;
 import com.example.dosenklp1.UserProfileActivity;
+import com.example.dosenklp1.adapter.ListAdapter;
+import com.example.dosenklp1.models.Mahasiswa;
+import com.example.dosenklp1.models.ProfileResponse;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class HomeFragment extends Fragment implements ListAdapter.ItemMahasiswaClickListener{
 
 
-    TextView textNama;
-    String nama;
+    TextView textNama, textNip;
+    String nama, username, email, gettoken, token;
     ImageView img;
 
     @Override
@@ -38,13 +48,27 @@ public class HomeFragment extends Fragment implements ListAdapter.ItemMahasiswaC
 
         //Get Name
         textNama = view.findViewById(R.id.lectureName);
-        Bundle bundle = getArguments();
+        textNip = view.findViewById(R.id.nip);
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences("com.example.dosenklp1.SHARED_KEY", Context.MODE_PRIVATE);
+        gettoken = sharedPreferences.getString("token", "");
+        token = "Bearer " + gettoken;
 
-        if(bundle != null){
-            nama = bundle.getString("email");
-        }
-        Log.d("isi", "onCreateView: "+ nama);
-        textNama.setText(nama);
+        Config config = new Config();
+        Call<ProfileResponse> call = config.configRetrofit().profile(token);
+        call.enqueue(new Callback<ProfileResponse>() {
+            @Override
+            public void onResponse(Call<ProfileResponse> call, Response<ProfileResponse> response) {
+                ProfileResponse profileResponse = response.body();
+                textNama.setText(profileResponse.getName());
+                textNip.setText(profileResponse.getUsername());
+            }
+
+            @Override
+            public void onFailure(Call<ProfileResponse> call, Throwable t) {
+
+            }
+        });
+
 
         //To profile
         img = view.findViewById(R.id.profilpicture);
@@ -52,6 +76,9 @@ public class HomeFragment extends Fragment implements ListAdapter.ItemMahasiswaC
             @Override
             public void onClick(View view) {
                 Intent profile = new Intent(getActivity(), UserProfileActivity.class);
+                profile.putExtra("nama", nama);
+                profile.putExtra("nip", username);
+                profile.putExtra("email", email);
                 startActivity(profile);
             }
         });

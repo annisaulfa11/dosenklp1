@@ -1,4 +1,4 @@
-package com.example.dosenklp1.home;
+package com.example.dosenklp1.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dosenklp1.R;
+import com.example.dosenklp1.models.Mahasiswa;
 
 import java.util.ArrayList;
 

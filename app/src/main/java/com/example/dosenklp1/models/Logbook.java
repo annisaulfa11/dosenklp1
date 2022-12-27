@@ -1,4 +1,4 @@
-package com.example.dosenklp1.logbook;
+package com.example.dosenklp1.models;
 
 public class Logbook {
 

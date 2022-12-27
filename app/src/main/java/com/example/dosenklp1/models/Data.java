@@ -1,4 +1,4 @@
-package com.example.dosenklp1.jadwal;
+package com.example.dosenklp1.models;
 
 public class Data {
     public static String[] names = new String[]{

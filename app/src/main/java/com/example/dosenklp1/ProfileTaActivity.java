@@ -7,13 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.dosenklp1.home.HomeFragment;
+import com.example.dosenklp1.fragments.HomeFragment;
 
 public class ProfileTaActivity extends AppCompatActivity {
 
     public static final String ITEM_EXTRA = "item_extra";
-    String nama;
-    TextView textNama;
+    String nama, nip, email;
+    TextView textNama, textNip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,8 @@ public class ProfileTaActivity extends AppCompatActivity {
         Intent detailTa = getIntent();
         if(detailTa != null){
             nama = detailTa.getStringExtra("nama");
+            nip = detailTa.getStringExtra("nip");
+            email = detailTa.getStringExtra("email");
             textNama = findViewById(R.id.name);
             textNama.setText(nama);
         }
@@ -47,7 +49,7 @@ public class ProfileTaActivity extends AppCompatActivity {
     }
 
     public void nilai(View view) {
-        Intent nilai = new Intent(this, InputTA.class);
+        Intent nilai = new Intent(this, InputNilaiActivity.class);
         startActivity(nilai);
     }
 

@@ -1,4 +1,4 @@
-package com.example.dosenklp1.bimbingan;
+package com.example.dosenklp1.models;
 
 public class Bimbingan {
 

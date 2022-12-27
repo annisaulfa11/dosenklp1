@@ -1,4 +1,4 @@
-package com.example.dosenklp1.jadwal;
+package com.example.dosenklp1.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dosenklp1.R;
-import com.example.dosenklp1.jadwal.Data;
+import com.example.dosenklp1.models.Data;
 
 
 public class ListAdapterJadwal extends  RecyclerView.Adapter<ListAdapterJadwal.MyViewHolder>{

@@ -1,4 +1,4 @@
-package com.example.dosenklp1.home;
+package com.example.dosenklp1.models;
 
 public class Mahasiswa {
 
