@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "17155265816",
+    "project_id": "dosenklp1",
+    "storage_bucket": "dosenklp1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:17155265816:android:1db827733a4c6f8e6dba6d",
+        "android_client_info": {
+          "package_name": "com.example.dosenklp1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "17155265816-er6qig115nfen6ogeaeq5uohqr3oe3k4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8keEv_D3OK81Sh0rUTwnlV7H1Ez03Hn0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "17155265816-er6qig115nfen6ogeaeq5uohqr3oe3k4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
