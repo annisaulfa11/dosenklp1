@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,10 +33,10 @@ public class UserProfileActivity extends AppCompatActivity {
         textNip = findViewById(R.id.nip_fill);
         textEmail = findViewById(R.id.email_fill);
 
-//        textNama.setText(nama);
-//        textUname.setText(nama);
-//        textNip.setText(nip);
-//        textEmail.setText(email);
+        textNama.setText(nama);
+        textUname.setText(nama);
+        textNip.setText(nip);
+        textEmail.setText(email);
 
         SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.example.dosenklp1.SHARED_KEY", MODE_PRIVATE);
         gettoken = sharedPreferences.getString("token", "");
@@ -90,6 +91,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
                 if (response.code() == 200){
                     if (response.isSuccessful()){
+                        Log.d("tokenout", token);
                         Intent intent = new Intent(UserProfileActivity.this, LoginActivity.class);
                         Toast.makeText(UserProfileActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         sharedPreferences.edit().clear().apply();

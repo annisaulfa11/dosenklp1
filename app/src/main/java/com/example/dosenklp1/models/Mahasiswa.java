@@ -2,15 +2,19 @@ package com.example.dosenklp1.models;
 
 public class Mahasiswa {
 
-    String nama, profil;
+    String nama;
+    Object profil;
 
-    public Mahasiswa(){}
+    public Mahasiswa(int id, String name, Object photo){
 
-    public Mahasiswa(String nama, String profil){
+    }
+
+    public Mahasiswa(String nama, Object profil){
         this.nama = nama;
         this.profil = profil;
 
     }
+
 
     public String getNama() {
         return nama;
@@ -20,11 +24,11 @@ public class Mahasiswa {
         this.nama = nama;
     }
 
-    public String getProfil() {
+    public Object getProfil() {
         return profil;
     }
 
-    public void setProfil(String profil) {
+    public void setProfil(Object profil) {
         this.profil = profil;
     }
 }

@@ -23,10 +23,14 @@ import com.example.dosenklp1.ProfileTaActivity;
 import com.example.dosenklp1.R;
 import com.example.dosenklp1.UserProfileActivity;
 import com.example.dosenklp1.adapter.ListAdapter;
+import com.example.dosenklp1.models.DetailTaResponse;
 import com.example.dosenklp1.models.Mahasiswa;
-import com.example.dosenklp1.models.ProfileResponse;
+import com.example.dosenklp1.models.MahasiswaBimbinganResponse;
+import com.example.dosenklp1.models.Student;
+import com.example.dosenklp1.models.ThesesItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -37,8 +41,16 @@ public class HomeFragment extends Fragment implements ListAdapter.ItemMahasiswaC
 
 
     TextView textNama, textNip;
-    String nama, username, email, gettoken, token;
+    Integer idTheses;
+    String nama, username, email, getToken, token;
     ImageView img;
+    private RecyclerView recyclerView;
+    Config config;
+    SharedPreferences sharedPreferences;
+    public HomeFragment(){
+
+    }
+    ListAdapter listAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,29 +58,29 @@ public class HomeFragment extends Fragment implements ListAdapter.ItemMahasiswaC
         // Inflate the layout for this fragment
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_home, container, false);
 
-        //Get Name
+
         textNama = view.findViewById(R.id.lectureName);
         textNip = view.findViewById(R.id.nip);
-        SharedPreferences sharedPreferences = getContext().getSharedPreferences("com.example.dosenklp1.SHARED_KEY", Context.MODE_PRIVATE);
-        gettoken = sharedPreferences.getString("token", "");
-        token = "Bearer " + gettoken;
 
-        Config config = new Config();
-        Call<ProfileResponse> call = config.configRetrofit().profile(token);
-        call.enqueue(new Callback<ProfileResponse>() {
-            @Override
-            public void onResponse(Call<ProfileResponse> call, Response<ProfileResponse> response) {
-                ProfileResponse profileResponse = response.body();
-                textNama.setText(profileResponse.getName());
-                textNip.setText(profileResponse.getUsername());
-            }
+        sharedPreferences = getActivity().getSharedPreferences("com.example.dosenklp1.SHARED_KEY", Context.MODE_PRIVATE);
+        getToken = sharedPreferences.getString("token", "");
+        token = "Bearer " + getToken;
 
-            @Override
-            public void onFailure(Call<ProfileResponse> call, Throwable t) {
-
-            }
-        });
-
+//        Config config = new Config();
+//        Call<ProfileResponse> call = config.configRetrofit().profile(token);
+//        call.enqueue(new Callback<ProfileResponse>() {
+//            @Override
+//            public void onResponse(Call<ProfileResponse> call, Response<ProfileResponse> response) {
+//                ProfileResponse profileResponse = response.body();
+//                textNama.setText(profileResponse.getName());
+//                textNip.setText(profileResponse.getUsername());
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ProfileResponse> call, Throwable t) {
+//
+//            }
+//        });
 
         //To profile
         img = view.findViewById(R.id.profilpicture);
@@ -83,59 +95,55 @@ public class HomeFragment extends Fragment implements ListAdapter.ItemMahasiswaC
             }
         });
 
-        RecyclerView recyclerView = view.findViewById(R.id.mahasiswaData);
-        ListAdapter listAdapter = new ListAdapter(getData());
-        listAdapter.setMahasiswaClickListener(this);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        recyclerView.setAdapter(listAdapter);
+        recyclerView = view.findViewById(R.id.mahasiswaData);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        loadDataMahasiswa(token);
 
         return view;
     }
 
-    public ArrayList<Mahasiswa> getData(){
-        ArrayList<Mahasiswa> listData = new ArrayList<>();
-        listData.add(new Mahasiswa(
-                "Annisa Ulfa",
-                null
+    public void loadDataMahasiswa(String token){
+        Config config = new Config();
+        Call<MahasiswaBimbinganResponse> call = config.configRetrofit().mahasiswa(token);
+        Log.d("token123", token);
+        call.enqueue(new Callback<MahasiswaBimbinganResponse>() {
+            @Override
+            public void onResponse(Call<MahasiswaBimbinganResponse> call, Response<MahasiswaBimbinganResponse> response) {
+                MahasiswaBimbinganResponse mahasiswaBimbinganResponse = response.body();
+                if(response.code() == 200){
+                    List<ThesesItem> listData = mahasiswaBimbinganResponse.getTheses();
+                    ArrayList<Student> mahasiswaArrayList = new ArrayList<>();
+                    listAdapter = new ListAdapter(mahasiswaArrayList);
 
-        ));
-        listData.add(new Mahasiswa(
-                "Muhammad Afif",
-                null
+                    for(ThesesItem thesesItem: listData){
+                        Student student = new Student(
+                                thesesItem.getId(),
+                                thesesItem.getStudent().getName(),
+                                thesesItem.getStudent().getPhoto()
+                        );
+                        mahasiswaArrayList.add(student);
+                        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+                        recyclerView.setLayoutManager(manager);
+                        recyclerView.setAdapter(listAdapter);
+                    }
+                    Log.d("data", String.valueOf(mahasiswaArrayList));
 
-        ));
-        listData.add(new Mahasiswa(
-                "Ranti Agustin",
-                null
+                    listAdapter.setMahasiswaClickListener(HomeFragment.this);
+                }
+            }
 
-        ));
-        listData.add(new Mahasiswa(
-                "Annisa Ulfa",
-                null
+            @Override
+            public void onFailure(Call<MahasiswaBimbinganResponse> call, Throwable t) {
 
-        ));
-        listData.add(new Mahasiswa(
-                "Annisa Ulfa",
-                null
-
-        ));
-        listData.add(new Mahasiswa(
-                "Annisa Ulfa",
-                null
-
-        ));
-
-        return listData;
+            }
+        });
     }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-
     }
-
-
 
     public void profileTA(View view) {
         Intent myIntent = new Intent(getActivity().getApplicationContext(), ProfileTaActivity.class);
@@ -143,9 +151,11 @@ public class HomeFragment extends Fragment implements ListAdapter.ItemMahasiswaC
     }
 
     @Override
-    public void onItemMahasiswaClick(Mahasiswa mahasiswa) {
+    public void onItemMahasiswaClick(Student student) {
         Intent detailTa = new Intent(getActivity().getApplicationContext(), ProfileTaActivity.class);
-        detailTa.putExtra("nama", mahasiswa.getNama());
+        detailTa.putExtra("id", student.getIdThesis());
         getActivity().startActivity(detailTa);
+
+
     }
 }

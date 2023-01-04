@@ -11,26 +11,27 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dosenklp1.R;
 import com.example.dosenklp1.models.Mahasiswa;
+import com.example.dosenklp1.models.Student;
 
 import java.util.ArrayList;
 
 
 public class ListAdapter extends  RecyclerView.Adapter<ListAdapter.MyViewHolder>{
 
-    ArrayList<Mahasiswa> listData = new ArrayList<>();
+    ArrayList<Student> listData;
     ItemMahasiswaClickListener mahasiswaClickListener;
 
-    public ListAdapter(ArrayList<Mahasiswa> listData){
-
+    public ListAdapter(ArrayList<Student> listData){
         this.listData = listData;
+        notifyDataSetChanged();
     }
 
-    public ListAdapter(ArrayList<Mahasiswa> listData, ItemMahasiswaClickListener mahasiswaClickListener) {
+    public ListAdapter(ArrayList<Student> listData, ItemMahasiswaClickListener mahasiswaClickListener) {
         this.listData = listData;
         this.mahasiswaClickListener = mahasiswaClickListener;
     }
 
-    public void setListData(ArrayList<Mahasiswa> listData) {
+    public void setListData(ArrayList<Student> listData) {
         this.listData = listData;
     }
 
@@ -47,9 +48,9 @@ public class ListAdapter extends  RecyclerView.Adapter<ListAdapter.MyViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Mahasiswa mahasiswa = listData.get(position);
+        Student student = listData.get(position);
+        holder.textNama.setText(student.getName());
         holder.profil.setImageResource(R.drawable.ic_launcher_background);
-        holder.textNama.setText(mahasiswa.getNama());
 
     }
 
@@ -59,11 +60,11 @@ public class ListAdapter extends  RecyclerView.Adapter<ListAdapter.MyViewHolder>
     }
 
     public interface ItemMahasiswaClickListener{
-        void onItemMahasiswaClick(Mahasiswa mahasiswa);
+        void onItemMahasiswaClick(Student student);
     }
 
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView textNama;
         ImageView profil;
@@ -73,14 +74,16 @@ public class ListAdapter extends  RecyclerView.Adapter<ListAdapter.MyViewHolder>
             textNama = itemView.findViewById(R.id.name);
             profil = itemView.findViewById(R.id.profilpicture);
 
-            itemView.setOnClickListener(this);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Student student = listData.get(getBindingAdapterPosition());
+                    mahasiswaClickListener.onItemMahasiswaClick(student);
+
+                }
+            });
 
         }
 
-        @Override
-        public void onClick(View view) {
-            Mahasiswa mahasiswa = listData.get(getBindingAdapterPosition());
-            mahasiswaClickListener.onItemMahasiswaClick(mahasiswa);
-        }
     }
 }

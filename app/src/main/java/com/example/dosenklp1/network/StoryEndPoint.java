@@ -1,8 +1,11 @@
 package com.example.dosenklp1.network;
 
 import com.example.dosenklp1.models.ChangePasswordResponse;
+import com.example.dosenklp1.models.DetailTaResponse;
+import com.example.dosenklp1.models.InputNilaiResponse;
 import com.example.dosenklp1.models.LoginResponse;
 import com.example.dosenklp1.models.LogoutResponse;
+import com.example.dosenklp1.models.MahasiswaBimbinganResponse;
 import com.example.dosenklp1.models.ProfileResponse;
 import com.example.dosenklp1.models.UpdateProfileResponse;
 
@@ -11,7 +14,9 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface StoryEndPoint {
     @FormUrlEncoded
@@ -31,6 +36,8 @@ public interface StoryEndPoint {
             @Header("Authorization") String token
     );
 
+
+
     @FormUrlEncoded
     @POST("api/me/update")
     Call<UpdateProfileResponse> updateProfile(
@@ -48,5 +55,22 @@ public interface StoryEndPoint {
             @Field("confirm_password") String confPass
     );
 
+    @GET("api/thesis/advisors")
+    Call<MahasiswaBimbinganResponse> mahasiswa(
+            @Header("Authorization") String token
+    );
 
+    @GET("api/theses/{id}")
+    Call<DetailTaResponse> theses(
+            @Path("id") Integer idTheses,
+            @Header("Authorization") String token
+    );
+
+    @FormUrlEncoded
+    @PATCH("api/thesis/grades/{id}")
+    Call<InputNilaiResponse> grade(
+            @Path("id") Integer idTheses,
+            @Header("Authorization") String token,
+            @Field("grade") String grade
+    );
 }
