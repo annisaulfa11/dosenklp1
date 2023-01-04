@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/StudioProjects/beneranlast/app/src/main/res/layout/activity_login.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/user/StudioProjects/beneranlast/app/src/main/res/layout/activity_mahasiswa.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/user/StudioProjects/beneranlast/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/user/StudioProjects/beneranlast/app/src/main/res/layout/activity_nilai.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/user/StudioProjects/beneranlast/app/src/main/res/layout/activity_profil_ta.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/user/StudioProjects/beneranlast/app/src/main/res/layout/activity_user_profile.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/user/StudioProjects/beneranlast/app/src/main/res/layout/fragment_bimbingan.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/user/StudioProjects/beneranlast/app/src/main/res/layout/fragment_home.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/user/StudioProjects/beneranlast/app/src/main/res/layout/item_mahasiswa.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/user/StudioProjects/beneranlast/app/src/main/res/layout/item_permintaan_bimbingan.xml" value="0.13333333333333333" />
         <entry key="..\:/dosen/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1925" />
         <entry key="..\:/dosen/app/src/main/res/drawable/button_negative_disabled.xml" value="0.1" />
         <entry key="..\:/dosen/app/src/main/res/drawable/button_positive_disabled.xml" value="0.1" />

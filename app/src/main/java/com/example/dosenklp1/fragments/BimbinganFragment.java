@@ -4,7 +4,9 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -19,17 +21,27 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.dosenklp1.Config;
 import com.example.dosenklp1.MainActivity;
 import com.example.dosenklp1.R;
 import com.example.dosenklp1.adapter.ListAdapterBimbingan;
 import com.example.dosenklp1.models.Bimbingan;
+import com.example.dosenklp1.models.MahasiswaBimbinganResponse;
+import com.example.dosenklp1.models.Student;
+import com.example.dosenklp1.models.ThesesItem;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class BimbinganFragment extends Fragment implements ListAdapterBimbingan.ItemPermintaanClickListener{
@@ -37,16 +49,50 @@ public class BimbinganFragment extends Fragment implements ListAdapterBimbingan.
     private NotificationManagerCompat notificationManager;
     private static final String CHANNEL_ID = "test_channel";
 
+    String nama, username, email, getToken, token;
+    ImageView img;
+    private RecyclerView recyclerView;
+    Config config;
+    SharedPreferences sharedPreferences;
+    public BimbinganFragment(){
+
+    }
+    ListAdapterBimbingan listAdapter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_bimbingan, container, false);
-        RecyclerView recyclerView = view.findViewById(R.id.bimbinganData);
+
+        sharedPreferences = getActivity().getSharedPreferences("com.example.dosenklp1.SHARED_KEY", Context.MODE_PRIVATE);
+        getToken = sharedPreferences.getString("token", "");
+        token = "Bearer " + getToken;
+
+//        Config config = new Config();
+//        Call<ProfileResponse> call = config.configRetrofit().profile(token);
+//        call.enqueue(new Callback<ProfileResponse>() {
+//            @Override
+//            public void onResponse(Call<ProfileResponse> call, Response<ProfileResponse> response) {
+//                ProfileResponse profileResponse = response.body();
+//                textNama.setText(profileResponse.getName());
+//                textNip.setText(profileResponse.getUsername());
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ProfileResponse> call, Throwable t) {
+//
+//            }
+//        });
+
+
+
+        recyclerView = view.findViewById(R.id.bimbinganData);
         ListAdapterBimbingan adapterBimbingan = new ListAdapterBimbingan(getPermintaan());
         adapterBimbingan.setPermintaanClickListener(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         recyclerView.setAdapter(adapterBimbingan);
+        loadDataMahasiswa2(token);
 
         FirebaseMessaging.getInstance().getToken()
                 .addOnCompleteListener(new OnCompleteListener<String>() {
@@ -72,49 +118,58 @@ public class BimbinganFragment extends Fragment implements ListAdapterBimbingan.
         return view;
     }
 
-    public ArrayList<Bimbingan> getPermintaan(){
-        ArrayList<Bimbingan> listPermintaan = new ArrayList<>();
-        listPermintaan.add(new Bimbingan(
-                "Annisa Ulfa",
-                "2011522015",
-                "Pembangunan Sistem Informasi Monitoring Harga Barang Kebutuhan Pokok Berbasis Barang Web",
-                null
-        ));
-        listPermintaan.add(new Bimbingan(
-                "Muhammad Afif",
-                "2011522030",
-                "Pembangunan Sistem Informasi Monitoring Harga Barang Kebutuhan Pokok Berbasis Barang Web",
-                null
-        ));        listPermintaan.add(new Bimbingan(
-                "Ranti Agustin",
-                "2011522015",
-                "Pembangunan Sistem Informasi Monitoring Harga Barang Kebutuhan Pokok Berbasis Barang Web",
-                null
-        ));        listPermintaan.add(new Bimbingan(
-                "Annisa Ulfa",
-                "2011522015",
-                "Pembangunan Sistem Informasi Monitoring Harga Barang Kebutuhan Pokok Berbasis Barang Web",
-                null
-        ));        listPermintaan.add(new Bimbingan(
-                "Annisa Ulfa",
-                "2011522015",
-                "Pembangunan Sistem Informasi Monitoring Harga Barang Kebutuhan Pokok Berbasis Barang Web",
-                null
-        ));
+//    private ArrayList<Bimbingan> getPermintaan() {
+//        return
+//    }
 
-        return listPermintaan;
+    public void loadDataMahasiswa2(String token){
+        Config config = new Config();
+        Call<MahasiswaBimbinganResponse> call = config.configRetrofit().mahasiswa(token);
+        Log.d("token123", token);
+        call.enqueue(new Callback<Bimbingan>() {
+            @Override
+            public void onResponse(Call<Bimbingan> call, Response<Bimbingan> response) {
+                Bimbingan mahasiswaBimbinganResponse = response.body();
+                if (response.code() == 200) {
+                    List<Bimbingan> listData = mahasiswaBimbinganResponse.getTheses();
+                    ArrayList<Bimbingan> mahasiswaArrayList = new ArrayList<>();
+                    listAdapter = new ListAdapterBimbingan(mahasiswaArrayList);
+
+                    for (ThesesItem thesesItem : listData) {
+                        Student student = new Student(
+                                thesesItem.getId(),
+                                thesesItem.getStudent().getName(),
+                                thesesItem.getStudent().getPhoto()
+                        );
+                        mahasiswaArrayList.add(student);
+                        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+                        recyclerView.setLayoutManager(manager);
+                        recyclerView.setAdapter(listAdapter);
+                    }
+                    Log.d("data", String.valueOf(mahasiswaArrayList));
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Bimbingan> call, Throwable t) {
+
+            }
+        }
     }
+
+
 
     @Override
     public void onItemPermintaanClick(Bimbingan bimbingan) {
-        Intent resultIntent = new Intent(this.getContext(), MainActivity.class);
-        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this.getContext());
+        Intent resultIntent = new Intent(this.getApplicationContext(), MainActivity.class);
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this.getApplicationContext());
         stackBuilder.addNextIntentWithParentStack(resultIntent);
         PendingIntent resultPendingIntent =
                 stackBuilder.getPendingIntent(0,
                         PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this.getContext(), CHANNEL_ID)
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this.getApplicationContext(), CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_baseline_notifications_none_24)
                 .setContentTitle("Bimbingan masuk")
                 .setContentText("Contoh notifikasi")
@@ -123,7 +178,11 @@ public class BimbinganFragment extends Fragment implements ListAdapterBimbingan.
         notificationManager.notify(101, builder.build());
     }
 
-    private void createNotificationChannel() {
+            private Context getApplicationContext() {
+                return null;
+            }
+
+            private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = "Bimbingan masuk";
             String description = "Channel untuk notifikasi bimbingan";
