@@ -150,7 +150,7 @@ public class BimbinganFragment extends Fragment implements ListAdapterBimbingan.
             public void onFailure(Call<Bimbingan> call, Throwable t) {
 
             }
-        }
+        })
                 ;
     }
 
