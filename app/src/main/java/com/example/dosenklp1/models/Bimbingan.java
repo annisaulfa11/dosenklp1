@@ -1,5 +1,7 @@
 package com.example.dosenklp1.models;
 
+import java.util.List;
+
 public class Bimbingan {
 
     String nama, nim, judul, profil;
@@ -43,5 +45,9 @@ public class Bimbingan {
 
     public void setProfil(String profil) {
         this.profil = profil;
+    }
+
+    public List<ThesesItem> getTheses() {
+        return getTheses();
     }
 }

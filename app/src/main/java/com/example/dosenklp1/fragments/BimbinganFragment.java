@@ -22,7 +22,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.dosenklp1.Config;
 import com.example.dosenklp1.MainActivity;
@@ -57,7 +56,7 @@ public class BimbinganFragment extends Fragment implements ListAdapterBimbingan.
     public BimbinganFragment(){
 
     }
-    ListAdapterBimbingan listAdapter;
+    ListAdapterBimbingan listAdapterBimbingan;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -86,12 +85,8 @@ public class BimbinganFragment extends Fragment implements ListAdapterBimbingan.
 //        });
 
 
-
         recyclerView = view.findViewById(R.id.bimbinganData);
-        ListAdapterBimbingan adapterBimbingan = new ListAdapterBimbingan(getPermintaan());
-        adapterBimbingan.setPermintaanClickListener(this);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        recyclerView.setAdapter(adapterBimbingan);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         loadDataMahasiswa2(token);
 
         FirebaseMessaging.getInstance().getToken()
@@ -126,14 +121,14 @@ public class BimbinganFragment extends Fragment implements ListAdapterBimbingan.
         Config config = new Config();
         Call<MahasiswaBimbinganResponse> call = config.configRetrofit().mahasiswa(token);
         Log.d("token123", token);
-        call.enqueue(new Callback<Bimbingan>() {
+        return call.enqueue(new Callback<Bimbingan>() {
             @Override
             public void onResponse(Call<Bimbingan> call, Response<Bimbingan> response) {
                 Bimbingan mahasiswaBimbinganResponse = response.body();
                 if (response.code() == 200) {
-                    List<Bimbingan> listData = mahasiswaBimbinganResponse.getTheses();
-                    ArrayList<Bimbingan> mahasiswaArrayList = new ArrayList<>();
-                    listAdapter = new ListAdapterBimbingan(mahasiswaArrayList);
+                    List<ThesesItem> listData = mahasiswaBimbinganResponse.getTheses();
+                    ArrayList<Student> mahasiswaArrayList = new ArrayList<>();
+                    ListAdapterBimbingan listAdapter = new ListAdapterBimbingan(mahasiswaArrayList);
 
                     for (ThesesItem thesesItem : listData) {
                         Student student = new Student(
@@ -144,7 +139,7 @@ public class BimbinganFragment extends Fragment implements ListAdapterBimbingan.
                         mahasiswaArrayList.add(student);
                         LinearLayoutManager manager = new LinearLayoutManager(getContext());
                         recyclerView.setLayoutManager(manager);
-                        recyclerView.setAdapter(listAdapter);
+                        recyclerView.setAdapter(listAdapterBimbingan);
                     }
                     Log.d("data", String.valueOf(mahasiswaArrayList));
 
@@ -156,6 +151,7 @@ public class BimbinganFragment extends Fragment implements ListAdapterBimbingan.
 
             }
         }
+                ;
     }
 
 

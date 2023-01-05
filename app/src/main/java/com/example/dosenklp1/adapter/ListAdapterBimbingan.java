@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dosenklp1.R;
 import com.example.dosenklp1.models.Bimbingan;
+import com.example.dosenklp1.models.Student;
 
 import java.util.ArrayList;
 
@@ -27,7 +28,7 @@ public class ListAdapterBimbingan extends  RecyclerView.Adapter<ListAdapterBimbi
         this.permintaanClickListener = permintaanClickListener;
     }
 
-    public ListAdapterBimbingan(ArrayList<Bimbingan> listPermintaan) {
+    public ListAdapterBimbingan(ArrayList<Student> listPermintaan) {
         this.listPermintaan = listPermintaan;
     }
 
