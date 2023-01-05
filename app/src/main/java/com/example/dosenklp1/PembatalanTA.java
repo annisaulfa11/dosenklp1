@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.example.dosenklp1.models.InputNilaiResponse;
 import com.example.dosenklp1.models.PembatalanTAResponse;
 
 import retrofit2.Call;
@@ -48,9 +47,9 @@ public class PembatalanTA extends AppCompatActivity {
             Log.d("idthes", idThesis + token );
             call.enqueue(new Callback<PembatalanTAResponse>() {
                 @Override
-                public void onResponse(retrofit2.Call<InputNilaiResponse> call, Response<PembatalanTAResponse> response) {
+                public void onResponse(Call<PembatalanTAResponse> call, Response<PembatalanTAResponse> response) {
                     PembatalanTAResponse PembatalanTAResponse = response.body();
-                    PembatalanTAResponse pembatalanTAResponse;
+                    PembatalanTAResponse pembatalanTAResponse = new PembatalanTAResponse();
                     if(pembatalanTAResponse.getStatus().equals("success")) {
                         Intent intent = new Intent(getApplication(), ProfileTaActivity.class);
                         intent.putExtra("id", idThesis);

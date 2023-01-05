@@ -83,6 +83,6 @@ public interface StoryEndPoint {
 
     @POST("/api/theses/277/trials")
     Call<PembatalanTAResponse> status(
-            @Header("Authorization") String token
+            int idThesis, String s, @Header("Authorization") String token
     );
 }
