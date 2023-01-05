@@ -53,9 +53,11 @@ public class BimbinganFragment extends Fragment implements ListAdapterBimbingan.
     private RecyclerView recyclerView;
     Config config;
     SharedPreferences sharedPreferences;
+
     public BimbinganFragment(){
 
     }
+
     ListAdapterBimbingan listAdapterBimbingan;
 
     @Override
