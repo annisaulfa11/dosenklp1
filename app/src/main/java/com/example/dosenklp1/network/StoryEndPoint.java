@@ -1,6 +1,7 @@
 package com.example.dosenklp1.network;
 
 import com.example.dosenklp1.models.ChangePasswordResponse;
+import com.example.dosenklp1.models.DetailLogbookResponse;
 import com.example.dosenklp1.models.DetailTaResponse;
 import com.example.dosenklp1.models.InputNilaiResponse;
 import com.example.dosenklp1.models.LoginResponse;
@@ -67,6 +68,11 @@ public interface StoryEndPoint {
             @Header("Authorization") String token
     );
 
+    @GET("api/theses/200/logbooks/{id}")
+    Call<DetailLogbookResponse> theses(
+            @Header("Authorization") String token
+    );
+
     @FormUrlEncoded
     @PATCH("api/thesis/grades/{id}")
     Call<InputNilaiResponse> grade(
@@ -77,6 +83,6 @@ public interface StoryEndPoint {
 
     @POST("/api/theses/277/trials")
     Call<PembatalanTAResponse> status(
-            int idThesis, String s, @Header("Authorization") String token
+            @Header("Authorization") String token
     );
 }
