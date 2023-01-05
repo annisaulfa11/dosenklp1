@@ -29,7 +29,7 @@
             tools:layout_editor_absoluteY="-343dp">
 
             <TextView
-                android:id="@+id/textView20"
+                android:id="@+id/textViewTanggalLogbook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -49,11 +49,11 @@
                 android:text="Catatan :"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/textView20"
-                app:layout_constraintTop_toBottomOf="@+id/textView20" />
+                app:layout_constraintStart_toStartOf="@+id/textViewTanggalLogbook"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTanggalLogbook" />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/editTextKegiatanLogbook"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
