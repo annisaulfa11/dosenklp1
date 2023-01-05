@@ -133,8 +133,7 @@ public class BimbinganFragment extends Fragment implements ListAdapterBimbingan.
                     for (ThesesItem thesesItem : listData) {
                         Student student = new Student(
                                 thesesItem.getId(),
-                                thesesItem.getStudent().getName(),
-                                thesesItem.getStudent().getPhoto()
+                                thesesItem.getStudent().getName()
                         );
                         mahasiswaArrayList.add(student);
                         LinearLayoutManager manager = new LinearLayoutManager(getContext());
@@ -150,7 +149,7 @@ public class BimbinganFragment extends Fragment implements ListAdapterBimbingan.
             public void onFailure(Call<Bimbingan> call, Throwable t) {
 
             }
-        })
+        }
                 ;
     }
 
@@ -168,7 +167,7 @@ public class BimbinganFragment extends Fragment implements ListAdapterBimbingan.
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this.getApplicationContext(), CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_baseline_notifications_none_24)
                 .setContentTitle("Bimbingan masuk")
-                .setContentText("Contoh notifikasi")
+                .setContentText("Permintaan Bimbingan Tugas Akhir")
                 .setContentIntent(resultPendingIntent)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
         notificationManager.notify(101, builder.build());

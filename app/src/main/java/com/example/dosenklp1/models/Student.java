@@ -63,6 +63,9 @@ public class Student{
         this.photo = photo;
     }
 
+    public Student(int id, String nama) {
+    }
+
     public void setBirthday(String birthday){
         this.birthday = birthday;
     }

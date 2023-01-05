@@ -6,6 +6,7 @@ import com.example.dosenklp1.models.InputNilaiResponse;
 import com.example.dosenklp1.models.LoginResponse;
 import com.example.dosenklp1.models.LogoutResponse;
 import com.example.dosenklp1.models.MahasiswaBimbinganResponse;
+import com.example.dosenklp1.models.PembatalanTAResponse;
 import com.example.dosenklp1.models.ProfileResponse;
 import com.example.dosenklp1.models.UpdateProfileResponse;
 
@@ -72,5 +73,10 @@ public interface StoryEndPoint {
             @Path("id") Integer idTheses,
             @Header("Authorization") String token,
             @Field("grade") String grade
+    );
+
+    @POST("/api/theses/277/trials")
+    Call<PembatalanTAResponse> status(
+            int idThesis, String s, @Header("Authorization") String token
     );
 }
