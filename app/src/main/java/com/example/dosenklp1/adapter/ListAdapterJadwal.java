@@ -10,11 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dosenklp1.R;
-import com.example.dosenklp1.fragments.JadwalFragment;
-import com.example.dosenklp1.models.Bimbingan;
-import com.example.dosenklp1.models.Data;
 import com.example.dosenklp1.models.Jadwal;
-import com.example.dosenklp1.models.Logbook;
 
 import java.util.ArrayList;
 

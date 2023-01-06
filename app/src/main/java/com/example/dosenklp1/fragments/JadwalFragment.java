@@ -22,14 +22,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.dosenklp1.MainActivity;
 import com.example.dosenklp1.R;
 import com.example.dosenklp1.adapter.ListAdapterJadwal;
-import com.example.dosenklp1.models.Bimbingan;
 import com.example.dosenklp1.models.Jadwal;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class JadwalFragment extends Fragment implements ListAdapterJadwal.ItemJadwalClickListener{
